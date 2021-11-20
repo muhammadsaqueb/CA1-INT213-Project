@@ -144,12 +144,13 @@ if __name__ == "__main__":
             try:
                 speak("What should I say?")
                 content = takecommand()
-                to = "mdsaquibe9357309084@gmail.com"    
+                speak("Enter Senders Mail")
+                to =  input("Enter Senders Mail:")  
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
-                speak("Sorry my friend. I am not able to send this email")    
+                speak("Sorry my friend. I am not able to send this email")   
 
         elif "news" in query:
             news()
