@@ -124,7 +124,7 @@ if __name__ == "__main__":
             location = takecommand()
             print("Hold on Sir, I will show you weather condition of " + location + " .")
             speak("Hold on Sir, I will show you weather condition of " + location + " .")
-            webbrowser.open("https://www.accuweather.com/en/in/"+location+"/195139/weather-forecast/195139" )
+            webbrowser.open("https://www.wunderground.com/weather/in/"+location+"/" )
 
         elif 'music' in query:
             music_dir = "C:\\Users\\mdsaq\\Music"
