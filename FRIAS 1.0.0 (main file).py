@@ -12,12 +12,13 @@ from datetime import date
 import calendar
 from time import time
 from selenium import webdriver
+import getpass
 
 engine = pyttsx3.init('sapi5') #SAPI5 is a microsoft speech API (Speech Application Programming Interface)
 voices = engine.getProperty('voices')
 #print(voices[1].id) #for printing the voices id which is in-built in Windows Operating System 
 engine.setProperty('voice', voices[1].id) #voice[1] means femail voice(Hazel)
-
+ 
 
 def speak(audio):
     #funtion for output voice or for speak convert our text ro speech
@@ -150,7 +151,7 @@ if __name__ == "__main__":
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
-                speak("Sorry my friend. I am not able to send this email")   
+                speak("Sorry my friend. I am not able to send this email")    
 
         elif "news" in query:
             news()
@@ -227,6 +228,8 @@ if __name__ == "__main__":
 
                     speak("Your INT306 DBMS Class is gonna start please be ready to Attend")
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -234,7 +237,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -255,6 +258,8 @@ if __name__ == "__main__":
 
                     speak("Your INT213 Python Programming Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -262,7 +267,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -281,7 +286,9 @@ if __name__ == "__main__":
 
                 elif hour_class >=15 and hour_class < 16:  #Monday CSE320 Class
 
-                    speak("Your CSE320 Software Engineering is gonna start please be ready to Attend")        
+                    speak("Your CSE320 Software Engineering is gonna start please be ready to Attend") 
+
+                    passwrd = getpass.getpass('Password :: ')       
 
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
@@ -290,7 +297,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -311,6 +318,8 @@ if __name__ == "__main__":
 
                     speak("Your CSE211 Computer Organization and Design Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -318,7 +327,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -335,12 +344,13 @@ if __name__ == "__main__":
                     join_class = driver.find_element_by_xpath('//*[@id="meetingSummary"]/div/div/a')
                     join_class.click()
 
-
             elif curr_day == 'Wednesday': #class routine of Wednesday 
                 hour_class = int(datetime.datetime.now().hour)
                 if hour_class >=9 and hour_class < 10: #Wednesday PEL131 Class
 
                     speak("Your PEL131 Commnucation Skills Class is gonna start please be ready to Attend") 
+
+                    passwrd = getpass.getpass('Password :: ')
 
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
@@ -349,7 +359,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -370,6 +380,8 @@ if __name__ == "__main__":
 
                     speak("Your CSE211 Computer Organization and Design Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -377,7 +389,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -398,6 +410,8 @@ if __name__ == "__main__":
 
                     speak("Your INT306 DBMS Class is gonna start please be ready to Attend")
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -405,7 +419,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -426,6 +440,8 @@ if __name__ == "__main__":
 
                     speak("Your CSE205 Data Structure Class is gonna start please be ready to Attend")
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -433,7 +449,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -454,6 +470,8 @@ if __name__ == "__main__":
 
                     speak("Your CSE320 Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -461,7 +479,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -484,6 +502,8 @@ if __name__ == "__main__":
 
                     speak("Your MTH401 Discrete Mathematics Class is gonna start please be ready to Attend")
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -491,7 +511,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -512,6 +532,8 @@ if __name__ == "__main__":
 
                     speak("Your PEL131 Commnucation Skills Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -519,7 +541,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -538,7 +560,9 @@ if __name__ == "__main__":
 
                 elif hour_class >=12 and hour_class < 13:  #Thursday CSE211 Class
 
-                    speak("Your CSE211 Computer Organization and Design Class is gonna start please be ready to Attend")        
+                    speak("Your CSE211 Computer Organization and Design Class is gonna start please be ready to Attend")   
+
+                    passwrd = getpass.getpass('Password :: ')     
 
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
@@ -547,7 +571,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -568,6 +592,8 @@ if __name__ == "__main__":
 
                     speak("Your INT306 DBMS Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -575,7 +601,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -592,9 +618,11 @@ if __name__ == "__main__":
                     join_class = driver.find_element_by_xpath('//*[@id="meetingSummary"]/div/div/a')
                     join_class.click()
 
-                elif hour_class >=15 and hour_class < 17:  #Thursday INT213 Class
+                elif hour_class >=16 and hour_class < 17:  #Thursday INT213 Class
 
                     speak("Your INT213 Python Programming Class is gonna start please be ready to Attend") 
+
+                    passwrd = getpass.getpass('Password :: ')
 
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
@@ -603,7 +631,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -622,9 +650,11 @@ if __name__ == "__main__":
 
             elif curr_day == 'Friday': #class routine of Friday 
                 hour_class = int(datetime.datetime.now().hour)
-                if hour_class >=20 and hour_class < 21: #Friday CSE205 Class
+                if hour_class >=9 and hour_class < 10: #Friday CSE205 Class
 
                     speak("Your CSE205 Data Structure Class is gonna start please be ready to Attend")
+
+                    passwrd = getpass.getpass('Password :: ')
 
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
@@ -633,7 +663,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -654,6 +684,8 @@ if __name__ == "__main__":
 
                     speak("Your MTH401 Discrete Mathematics Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -661,7 +693,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -684,6 +716,8 @@ if __name__ == "__main__":
 
                     speak("Your MTH401 Discrete Mathematics Class is gonna start please be ready to Attend")
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -691,7 +725,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -712,6 +746,8 @@ if __name__ == "__main__":
 
                     speak("Your PEL131 Commnucation Skills Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -719,7 +755,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -738,7 +774,9 @@ if __name__ == "__main__":
 
                 elif hour_class >=12 and hour_class < 14:  #Saturday CSE205 Class
 
-                    speak("Your CSE205 Data Structure Class is gonna start please be ready to Attend")        
+                    speak("Your CSE205 Data Structure Class is gonna start please be ready to Attend")   
+
+                    passwrd = getpass.getpass('Password :: ')     
 
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
@@ -747,7 +785,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -768,6 +806,8 @@ if __name__ == "__main__":
 
                     speak("Your CSE320 Software Engineering Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -775,7 +815,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
@@ -796,6 +836,8 @@ if __name__ == "__main__":
 
                     speak("Your CSE211 Computer Organization and Design Class is gonna start please be ready to Attend") 
 
+                    passwrd = getpass.getpass('Password :: ')
+
                     driver = webdriver.Chrome(executable_path="D:\PYTHON\chromedriver_win32\chromedriver.exe")
                     driver.get("https://myclass.lpu.in/")
 
@@ -803,7 +845,7 @@ if __name__ == "__main__":
                     Username.send_keys('12020603')
 
                     Password = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[6]/input[2]')
-                    Password.send_keys('Veronica@2251824')
+                    Password.send_keys(passwrd)
 
                     login = driver.find_element_by_xpath('/html/body/div[2]/div/form/div[7]/button')
                     login.click() 
